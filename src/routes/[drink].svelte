@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
 
   export async function load({ params, fetch }) {
     const response = await fetch('/api/test.json');
@@ -9,7 +9,7 @@
       }
     };
   }
-</script>
+</script> -->
 
 <script>
   //import { page } from '$app/stores';
