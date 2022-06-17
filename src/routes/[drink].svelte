@@ -14,12 +14,12 @@
 </script> -->
 
 <script>
-  import { page } from '$app/stores';
-  import { offerList } from '../stores'
+  //import { page } from '$app/stores';
+  //import { offerList } from '../stores'
   import { getRelativeDiscount } from '../utils'
-  import Offer from '$lib/Offer.svelte'
-  $: filteredOfferList = $offerList.filter( offer => offer.productGroup.alias === $page.params.drink)
-  
+  //import Offer from '$lib/Offer.svelte'
+  //$: filteredOfferList = $offerList.filter( offer => offer.productGroup.alias === $page.params.drink)
+  export let filteredOfferList
   function sortByRel () {
     filteredOfferList.sort((a,b) => getRelativeDiscount(b) - getRelativeDiscount(a))
     filteredOfferList = [...filteredOfferList]
