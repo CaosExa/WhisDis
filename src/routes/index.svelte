@@ -1,10 +1,5 @@
-<script context="module">
-	import { offerList } from '../stores.js'
-	export const prerender = true;
-	
-</script>
-
 <script>
+	import { offerList } from '../stores.js'
 	import Offer from '$lib/Offer.svelte'
 	export let data
 	offerList.set(data)
