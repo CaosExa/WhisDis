@@ -13,8 +13,7 @@ async function getOffers() {
 	};
 
 	const res = await fetch(
-		'https://cors-anywhere.herokuapp.com/https://es-api.drankdozijn.nl/sale-products?country=DE&language=de&cacheKey=1&premiumMember=N',
-		requestOptions
+		'https://es-api.drankdozijn.nl/sale-products?country=DE&language=de&cacheKey=1&premiumMember=N'
 	);
 	// .then(response => response.text())
 	// .then(result => console.log(result))
@@ -27,6 +26,6 @@ async function getOffers() {
 
 export const offerList = readable(offers, function start(set) {
 	//set(offers);
-	//getOffers().then((res) => set(res));
+	getOffers().then((res) => set(res));
 	return function stop() {};
 });
