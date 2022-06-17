@@ -1,7 +1,7 @@
 <script context="module">
 
   export async function load({ params, fetch }) {
-    const response = await fetch('./api/test.json');
+    const response = await fetch('/api/test.json');
     const filteredOfferList = response.json()
     return {
       props: {
