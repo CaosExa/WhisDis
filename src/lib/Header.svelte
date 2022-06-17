@@ -9,7 +9,7 @@
 		</svg>
 		<ul>
 			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/whisky'}><a sveltekit:prefetch href="/whisky">Whisky</a></li>
+			<li class:active={$page.url.pathname === '/whisky'}><a href="/whisky">Whisky</a></li>
 			<li class:active={$page.url.pathname === '/rum'}><a sveltekit:prefetch href="/rum">Rum</a></li>
 			<li class:active={$page.url.pathname === '/port-sherry'}><a sveltekit:prefetch href="/port-sherry">Porto & Sherry</a></li>
 			<li class:active={$page.url.pathname === '/bier'}><a sveltekit:prefetch href="/bier">Bier</a></li>
