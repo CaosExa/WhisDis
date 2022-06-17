@@ -7,6 +7,7 @@
 <script>
 	import Offer from '$lib/Offer.svelte'
 	export let data
+	offerList.set(data)
 </script>
 
 <svelte:head>
@@ -21,7 +22,7 @@
 
 
 	<ul>
-		{#each data as offer}
+		{#each $offerList as offer}
 			<Offer {offer} />
 		{/each}
 	</ul>
