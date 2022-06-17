@@ -1,23 +1,11 @@
-<!-- <script context="module">
-
-  export async function load({ params, fetch }) {
-    const response = await fetch('/api/test.json');
-    const filteredOfferList = response.json()
-    return {
-      props: {
-        filteredOfferList
-      }
-    };
-  }
-</script> -->
-
 <script>
   import { page } from '$app/stores';
   import { offerList } from '../stores'
   import { getRelativeDiscount } from '../utils'
   import Offer from '$lib/Offer.svelte'
+
   $: filteredOfferList = $offerList.filter( offer => offer.productGroup.alias === $page.params.drink)
-  //export let filteredOfferList
+
   function sortByRel () {
     filteredOfferList.sort((a,b) => getRelativeDiscount(b) - getRelativeDiscount(a))
     filteredOfferList = [...filteredOfferList]
@@ -36,3 +24,11 @@ this is {$page.params.drink} site
 		  <Offer {offer} />
 		{/each}
 	</ul>
+
+<style>
+  ul{
+    display:grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(16em, 50%), 1fr));
+  }
+</style>
