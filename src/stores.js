@@ -26,6 +26,6 @@ async function getOffers() {
 
 export const offerList = readable(offers, function start(set) {
 	//set(offers);
-	getOffers().then((res) => set(res));
+	//getOffers().then((res) => set(res));
 	return function stop() {};
 });
