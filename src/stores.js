@@ -1,4 +1,4 @@
 import offers from '$lib/test.json';
 import { writable } from 'svelte/store';
 
-export const offerList = writable(offers);
+export const offerList = writable([]);
