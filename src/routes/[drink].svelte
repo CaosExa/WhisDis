@@ -28,7 +28,7 @@
     filteredOfferList = [...filteredOfferList]
   }
 </script>
-this is {$page.params.drink} site
+<!-- this is {$page.params.drink} site -->
 <button on:click={sortByRel}>Sort by Rel</button>
 <button on:click={sortByAbs}>Sort by Abs</button>
 	<ul>
