@@ -1,17 +1,15 @@
-<!-- <script context="module">
-  import { offerList } from '../stores.js'
-  const filteredOfferList = offerList.filter( offer => offer.productGroup.alias === $page.params.drink)
+<script context="module">
 
   export async function load({ params, fetch }) {
-    // const url = `https://es-api.drankdozijn.nl/sale-products?country=DE&language=de&cacheKey=1&premiumMember=N`;
-    // const response = await fetch(url);
+    const response = await fetch('./api/test.json');
+    const filteredOfferList = response.json()
     return {
       props: {
         filteredOfferList
       }
     };
   }
-</script> -->
+</script>
 
 <script>
   //import { page } from '$app/stores';
