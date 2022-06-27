@@ -1,12 +1,15 @@
-import { set_data } from 'svelte/types/runtime/internal/dom';
 import { offerList } from '../stores.js';
-export async function get() {
-	const url =
-		'https://es-api.drankdozijn.nl/sale-products?country=DE&language=de&cacheKey=1&premiumMember=N';
-	const res = await fetch(url);
-	const data = await res.json();
-	if (data) {
-		offerList.set(data);
+export async function get({ url }) {
+	const res = await fetch(
+		'https://es-api.drankdozijn.nl/sale-products?country=DE&language=de&cacheKey=1&premiumMember=N'
+	);
+	let offers = await res.json();
+	if (offers) {
+		offerList.set(offers);
+		let data = offers;
+		if (url.searchParams.has('drink')) {
+			data = offers.filter((offer) => offer.productGroup.alias === url.searchParams.get('drink'));
+		}
 		return {
 			body: { data }
 		};
@@ -15,3 +18,13 @@ export async function get() {
 		status: 404
 	};
 }
+
+// import offers from '$lib/test.json';
+// console.log('ext fetch');
+// export async function get({ url }) {
+// 	let data = offers;
+// 	if (url.searchParams.has('drink')) {
+// 		data = offers.filter((offer) => offer.productGroup.alias === url.searchParams.get('drink'));
+// 	}
+// 	return { body: { data } };
+// }

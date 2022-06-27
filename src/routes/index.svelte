@@ -11,15 +11,13 @@
 </svelte:head>
 
 <section>
-	<h1>
-		welcome	to WihDis
-	</h1>
-
+	<h1><a rel="external" target="blank" href="https://drankdozijn.de">Drankdozijn</a> Angebote</h1>
 
 	<ul>
-		{#each $offerList as offer}
-			<Offer {offer} />
-		{/each}
+		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'whisky').length} Whisky </strong>Angebote</li>
+		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'rum').length} Rum </strong>Angebote</li>
+		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'port-sherry').length} Porto & Sherry </strong>Angebote</li>
+		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'bier').length} Bier </strong>Angebote</li>
 	</ul>
  
 </section>
@@ -35,5 +33,11 @@
 
 	h1 {
 		width: 100%;
+	}
+	li::marker{
+		color: var(--accent-color)
+	}
+	li{
+		padding: 0.5em;
 	}
 </style>
