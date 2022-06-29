@@ -70,7 +70,7 @@
     overflow: hidden;
     width: min(31em, 100% );
     display: flex;
-    gap:1px;
+    gap:1em;
     
   }
   button{
