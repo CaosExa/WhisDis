@@ -26,7 +26,7 @@ img{
   object-position: 0 ;
   display: block;
   margin: 0.5em auto -1em auto;
-  transform: scale(1.1)
+  transform: scale(1.05)
 }
 li {
     border-radius: 0.3em;
@@ -34,6 +34,7 @@ li {
     padding: 0 1rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     position: relative;
+    overflow: hidden;
   }
 a {
   margin-top: 2em;
