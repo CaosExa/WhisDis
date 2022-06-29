@@ -59,7 +59,7 @@
     padding: 0;
     display:grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(15em, 47%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(12em, 47%), 1fr));
     list-style: none;
   }
   .sort-group{
@@ -68,7 +68,7 @@
     margin-bottom: 1rem;
     border-radius: 0.5rem;
     overflow: hidden;
-    width: min(26em, 100% );
+    width: min(30em, 100% );
     display: flex;
     gap:1px;
     
