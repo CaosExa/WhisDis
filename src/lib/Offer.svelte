@@ -52,8 +52,7 @@ li {
     overflow: hidden;
   }
   .card-footer{
-    position: absolute;
-    bottom: 0.5em;
+
   }
 a {
   margin-top: 2em;
