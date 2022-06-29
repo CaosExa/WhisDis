@@ -6,8 +6,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="w" />
+	<title>Whis-Dis</title>
+	<meta name="description" content="Meta search site for Drankdozijn sales" />
 </svelte:head>
 
 <section>

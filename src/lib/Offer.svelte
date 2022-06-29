@@ -38,7 +38,7 @@
 <style>
 .multi-img-container{
   max-width: 100%;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 1.5em auto -1.5em auto; 
