@@ -63,21 +63,17 @@
     list-style: none;
   }
   .sort-group{
-    padding: 0;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
-    border: 1px solid red;
     border-radius: 0.3em;
     overflow: hidden;
     width: min(31em, 100% );
     display: flex;
-    gap:1px;
-    justify-content: space-between;
+    gap:2px;
   }
   button{
-    margin:0;
-    flex-grow: 1;
+    margin: 0;
     border: none;
     background-color: var(--tertiary-color);
     color: var(--accent-color);
