@@ -6,6 +6,8 @@
 </script>
 
 <li>
+  <span class="abs-disc">-{(offer.price-offer.salePrice).toFixed(2)}€</span>
+  <span class="rel-disc">{ getRelativeDiscount(offer).toFixed(2)} % </span>
   {#if offer.structuredData}
     <img src={imgRoot + offer.products[0].images[0]} alt={offer.saleDescription} />
   {:else if offer.products.length > 1}
@@ -17,14 +19,13 @@
   {:else}
     <div style="display:flex; justify-content: center; margin: 3em ">No Image</div>
   {/if}
-  <a href={"https://drankdozijn.de/artikel/"+offer.products[0].alias}>
-    {offer.saleDescription} 
-  </a>
-  
-  <span class="abs-disc">-{(offer.price-offer.salePrice).toFixed(2)}€</span>
-  <span class="rel-disc">{ getRelativeDiscount(offer).toFixed(2)} % </span>
-  <b>{offer.salePrice.toFixed(2)}€</b> 
-  <span class="old-price">{offer.price.toFixed(2)}€</span> 
+  <div class="card-footer">
+    <a href={"https://drankdozijn.de/artikel/"+offer.products[0].alias}>
+      {offer.saleDescription} 
+    </a>
+    <b>{offer.salePrice.toFixed(2)}€</b> 
+    <span class="old-price">{offer.price.toFixed(2)}€</span> 
+  </div>
 </li>
 
 <style>
@@ -49,6 +50,10 @@ li {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     position: relative;
     overflow: hidden;
+  }
+  .card-footer{
+    position: absolute;
+    bottom: 0.5em;
   }
 a {
   margin-top: 2em;
