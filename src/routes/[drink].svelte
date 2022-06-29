@@ -63,6 +63,7 @@
     list-style: none;
   }
   .sort-group{
+    padding: 0;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -75,6 +76,7 @@
     justify-content: space-between;
   }
   button{
+    margin:0;
     flex-grow: 1;
     border: none;
     background-color: var(--tertiary-color);
