@@ -66,6 +66,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
+    border: 1px solid red;
     border-radius: 0.3em;
     overflow: hidden;
     width: min(31em, 100% );
