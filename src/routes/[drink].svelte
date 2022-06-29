@@ -23,7 +23,7 @@
 </script>
 
 <script>
-  //import { page } from '$app/stores';
+  import { page } from '$app/stores';
   //import { offerList } from '../stores'
   import { getRelativeDiscount } from '../utils'
   import Offer from '$lib/Offer.svelte'
@@ -43,6 +43,12 @@
     activeSort = 'abs'
   }
 </script>
+
+<svelte:head>
+	<title>Whis-Dis - {$page.params.drink}</title>
+	<meta name="drink" content={$page.params.drink} />
+</svelte:head>
+
 <div class="sort-group">
   <button class:active={activeSort === 'rel'} on:click={sortByRel}>Sortieren %</button>
   <button class:active={activeSort === 'abs'} on:click={sortByAbs}>Sortieren €</button>
