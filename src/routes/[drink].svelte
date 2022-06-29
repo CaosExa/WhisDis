@@ -73,6 +73,7 @@
     gap:2px;
   }
   button{
+    flex-grow: 1;
     margin: 0;
     border: none;
     background-color: var(--tertiary-color);
