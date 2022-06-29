@@ -11,22 +11,19 @@
     {offer.saleDescription} 
   </a>
   
-  <span class="rel-disc">
-    { getRelativeDiscount(offer).toFixed(2)} % 
-  </span>
+  <span class="abs-disc">-{(offer.price-offer.salePrice).toFixed(2)}€</span>
+  <span class="rel-disc">{ getRelativeDiscount(offer).toFixed(2)} % </span>
   <b>{offer.salePrice.toFixed(2)}€</b> 
   <span class="old-price">{offer.price.toFixed(2)}€</span> 
-  <span class="abs-disc">-{(offer.price-offer.salePrice).toFixed(2)}€</span>
 </li>
 
 <style>
 img{
-  max-height: 9rem;
+  max-height: 6rem;
   object-fit: contain;
-  object-position: 0 ;
+  object-position: center;
   display: block;
-  margin: 0.5em auto -1em auto;
-  transform: scale(1.05)
+  margin: 1em auto -1.5em auto;
 }
 li {
     border-radius: 0.3em;
@@ -48,6 +45,7 @@ a {
   padding: 0.3em 0.5em;
   position: absolute;
   top: 0;
+  font-size: 0.9em;
 }
 .rel-disc{
   border-radius: 0px 0.3em ;

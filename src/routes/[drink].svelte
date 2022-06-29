@@ -68,7 +68,7 @@
     margin-bottom: 1rem;
     border-radius: 0.5rem;
     overflow: hidden;
-    width: min(30em, 100% );
+    width: min(31em, 100% );
     display: flex;
     gap:1px;
     
