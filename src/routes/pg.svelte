@@ -1,7 +1,7 @@
 <script>
 import { testStore } from '../stores.js'
 
-function inc() {
+const inc = () => {
 		testStore.update(n => n + 1);
 }
 </script>

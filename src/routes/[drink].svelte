@@ -66,12 +66,12 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.3em;
     overflow: hidden;
     width: min(31em, 100% );
     display: flex;
-    gap:1em;
-    
+    gap:1px;
+    justify-content: space-between;
   }
   button{
     flex-grow: 1;
