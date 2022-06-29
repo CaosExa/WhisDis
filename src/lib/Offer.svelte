@@ -1,11 +1,21 @@
 <script>
   import { getRelativeDiscount } from '../utils'
   export let offer
+
+  const imgRoot = 'https://res.cloudinary.com/boozeboodcdn/image/upload/q_auto/w_200,h_300,c_limit/'
 </script>
 
 <li>
   {#if offer.structuredData}
-    <img src={offer.structuredData.image[0]} alt={offer.saleDescription} />
+    <img src={imgRoot + offer.products[0].images[0]} alt={offer.saleDescription} />
+  {:else if offer.products.length > 1}
+		<div class="multi-img-container">
+      {#each offer.products as product}
+        <img src={imgRoot + product.images[0]} alt={offer.saleDescription} />
+      {/each}
+		</div>
+  {:else}
+    <div style="display:flex; justify-content: center; margin: 3em ">No Image</div>
   {/if}
   <a href={"https://drankdozijn.de/artikel/"+offer.products[0].alias}>
     {offer.saleDescription} 
@@ -18,10 +28,17 @@
 </li>
 
 <style>
-img{
+.multi-img-container{
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		margin: 1.5em auto -1.5em auto;
+	}
+	.multi-img-container > img{
+		overflow: hidden;
+	}
+li > img{
   max-height: 6rem;
-  object-fit: contain;
-  object-position: center;
   display: block;
   margin: 1em auto -1.5em auto;
 }
