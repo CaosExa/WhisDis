@@ -51,4 +51,7 @@
 	li{
 		padding: 0.5em;
 	}
+	a{
+		margin-bottom: 1em;
+	}
 </style>
