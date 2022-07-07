@@ -84,6 +84,23 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
+.badge{
+	background-color: var(--accent-color);
+  color: white;
+  padding: 0.3em 0.5em;
+  position: absolute;
+  top: 0;
+  font-size: 0.9em;
+}
+.badge-right{
+	border-radius: 0 0.3em ;
+  right: 0;
+}
+.badge-left{
+	border-radius: 0.3em 0 ;
+  left: 0;
+}
+
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;

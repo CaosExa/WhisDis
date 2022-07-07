@@ -5,14 +5,11 @@
     const { data } = await res.json()
 
     if(res.ok){
-      //console.log('gt flt list')
-      //const filteredOfferList = data.filter( offer => offer.productGroup.alias === params.drink)
       return { 
         status: res.status,
         props: {
           filteredOfferList: data,
           activeSort: ''}
-        
       }
     } else {
       return {
@@ -24,12 +21,10 @@
 
 <script>
   import { page } from '$app/stores';
-  //import { offerList } from '../stores'
   import { getRelativeDiscount } from '../utils'
   import Offer from '$lib/Offer.svelte'
   export let filteredOfferList
   export let activeSort
-  //$: filteredOfferList = $offerList.filter( offer => offer.productGroup.alias === $page.params.drink)
 
   function sortByRel () {
     filteredOfferList.sort((a,b) => getRelativeDiscount(b) - getRelativeDiscount(a))

@@ -1,22 +1,22 @@
 <script>
+  import { imgRoot } from './stores.js'
   import { getRelativeDiscount } from '../utils'
   export let offer
 
-  const imgRoot = 'https://res.cloudinary.com/boozeboodcdn/image/upload/q_auto/w_200,h_300,c_limit/'
 </script>
 
 <li>
 	<div>
-		<span class="abs-disc">-{(offer.price-offer.salePrice).toFixed(2)}€</span>
-    <span class="rel-disc">{ getRelativeDiscount(offer).toFixed(2)} % </span>
+		<span class="badge badge-left">-{(offer.price-offer.salePrice).toFixed(2)}€</span>
+    <span class="badge badge-right">{ getRelativeDiscount(offer).toFixed(2)}%</span>
 	</div>
 	
   {#if offer.structuredData}
-    <img src={imgRoot + offer.products[0].images[0]} alt={offer.saleDescription} />
+    <img src={$imgRoot + offer.products[0].images[0]} alt={offer.saleDescription} />
   {:else if offer.products.length > 1}
 		<div class="multi-img-container">
 			{#each offer.products as product}
-				 <img src={imgRoot + product.images[0]} alt={offer.saleDescription} />
+				 <img src={$imgRoot + product.images[0]} alt={offer.saleDescription} />
 			{/each}
 		</div>
   {:else}
@@ -68,23 +68,7 @@ a {
   font-size: 0.9em;
   margin-bottom: 0.5em;
 }
-.abs-disc, .rel-disc{
-  background-color: var(--accent-color);
-  color: white;
-  padding: 0.3em 0.5em;
-  position: absolute;
-  top: 0;
-  font-size: 0.9em;
-}
-.rel-disc{
-  border-radius: 0px 0.3em ;
-  right: 0;
-}
 
-.abs-disc{
-  border-radius: 0.3em 0 ;
-  left: 0;
-}
 .card-pricing{
 	display: flex;
 	justify-content: space-between;

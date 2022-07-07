@@ -1,8 +1,16 @@
 <script>
-	import { offerList } from '../stores.js'
+	import { headerDrinks, imgRoot } from './stores.js'
 	import Offer from '$lib/Offer.svelte'
 	export let data
-	offerList.set(data)
+
+	function getCardInfo(drink) {
+		const amount = data.filter( offer => offer.productGroup.alias === drink).length
+		const imgIndex = data.findIndex( offer => offer.productGroup.alias === drink)
+		const imagePath = $imgRoot + data[imgIndex].products[0].images[0]
+		return {
+			amount, imagePath
+		}
+}
 </script>
 
 <svelte:head>
@@ -13,14 +21,17 @@
 <section>
 	<h1><a rel="external" target="blank" href="https://drankdozijn.de">Drankdozijn</a> Angebote</h1>
 
-	<ul>
-		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'whisky').length} Whisky </strong>Angebote</li>
-		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'rum').length} Rum </strong>Angebote</li>
-		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'port-sherry').length} Porto & Sherry </strong>Angebote</li>
-		<li>Es gibt <strong>{$offerList.filter( offer => offer.productGroup.alias === 'bier').length} Bier </strong>Angebote</li>
-	</ul>
- 
+	<div class="overview-container">
+	{#each $headerDrinks as drink}
+		<div class="overview-item">
+			<span class="amount">{getCardInfo(drink[0]).amount} Angebote</span>
+			<img src="{getCardInfo(drink[0]).imagePath}" alt={drink[1]}>
+			<a sveltekit:prefetch href={'/'+drink[0]}>{drink[1]}</a>
+		</div>
+	{/each}
+	</div>
 </section>
+
 <section>
   <h2>
 	  Weitere Angebote:
@@ -41,17 +52,38 @@
 		align-items: center;
 		flex: 1;
 	}
-
 	h1 {
 		width: 100%;
 	}
-	li::marker{
-		color: var(--accent-color)
-	}
-	li{
-		padding: 0.5em;
-	}
 	a{
 		margin-bottom: 0.5em;
+	}
+
+	.overview-container{
+		margin: 0;
+		padding: 0;
+		display:grid;
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(min(16em, 47%), 1fr));
+	}
+	.overview-item{
+		border-radius: 0.3em;
+		background-color: white;
+		padding: 0 1rem;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		position: relative;
+		overflow: hidden;
+	}
+	.overview-item > img{
+		max-height: 7rem;
+		display: block;
+		margin: 1em auto -1.5em auto;
+	}
+	.overview-item > a {
+		margin-top: 2em;
+		display: block;
+		margin-bottom: 0.5em;
+		font-weight: bold;
+		text-align: center;
 	}
 </style>
