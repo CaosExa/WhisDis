@@ -1,7 +1,6 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/stores'
 	let windowWidth
-	$: console.log(windowWidth)
 </script>
 
 <svelte:window bind:innerWidth={windowWidth}/>
