@@ -5,12 +5,12 @@
     const { data } = await res.json()
 
     if(res.ok){
-      console.log('gt flt list')
-      const filteredOfferList = data.filter( offer => offer.productGroup.alias === params.drink)
+      //console.log('gt flt list')
+      //const filteredOfferList = data.filter( offer => offer.productGroup.alias === params.drink)
       return { 
         status: res.status,
         props: {
-          filteredOfferList,
+          filteredOfferList: data,
           activeSort: ''}
         
       }
