@@ -52,6 +52,6 @@
 		padding: 0.5em;
 	}
 	a{
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
 	}
 </style>
