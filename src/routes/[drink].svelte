@@ -2,13 +2,13 @@
   export async function load({ params, fetch }){
     const headers = new Headers({'accept':'application/json'})
     const res = await fetch(`/__data.json?drink=${params.drink}`,headers)
-    const { data } = await res.json()
+    const { offers } = await res.json()
 
     if(res.ok){
       return { 
         status: res.status,
         props: {
-          filteredOfferList: data,
+          filteredOfferList: offers,
           activeSort: ''}
       }
     } else {
