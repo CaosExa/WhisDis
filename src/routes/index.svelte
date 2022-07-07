@@ -1,12 +1,12 @@
 <script>
 	import { headerDrinks, imgRoot } from '../stores.js'
 	import Offer from '$lib/Offer.svelte'
-	export let data
+	export let offers
 
 	function getCardInfo(drink) {
-		const amount = data.filter( offer => offer.productGroup.alias === drink).length
-		const imgIndex = data.findIndex( offer => offer.productGroup.alias === drink)
-		const imagePath = $imgRoot + data[imgIndex].products[0].images[0]
+		const amount = offers.filter( offer => offer.productGroup.alias === drink).length
+		const imgIndex = offers.findIndex( offer => offer.productGroup.alias === drink)
+		const imagePath = $imgRoot + offers[imgIndex].products[0].images[0]
 		return {
 			amount, imagePath
 		}
