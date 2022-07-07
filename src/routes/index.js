@@ -1,4 +1,3 @@
-import { offerList } from '../stores.js';
 export async function get({ url }) {
 	const res = await fetch(
 		'https://es-api.drankdozijn.nl/sale-products?country=DE&language=de&cacheKey=1&premiumMember=N'
