@@ -17,12 +17,12 @@ export async function get({ url }) {
 	};
 }
 
-// import offers from '$lib/test.json';
+// import data from '$lib/test.json';
 // console.log('ext fetch');
 // export async function get({ url }) {
-// 	let data = offers;
+//	let offers = data
 // 	if (url.searchParams.has('drink')) {
-// 		data = offers.filter((offer) => offer.productGroup.alias === url.searchParams.get('drink'));
+// 		offers = data.filter((offer) => offer.productGroup.alias === url.searchParams.get('drink'));
 // 	}
-// 	return { body: { data } };
+// 	return { body: { offers } };
 // }
