@@ -1,5 +1,5 @@
 <script>
-	import { headerDrinks, imgRoot } from './stores.js'
+	import { headerDrinks, imgRoot } from '../stores.js'
 	import Offer from '$lib/Offer.svelte'
 	export let data
 
@@ -21,15 +21,17 @@
 <section>
 	<h1><a rel="external" target="blank" href="https://drankdozijn.de">Drankdozijn</a> Angebote</h1>
 
-	<div class="overview-container">
+	<ul>
 	{#each $headerDrinks as drink}
-		<div class="overview-item">
-			<span class="amount">{getCardInfo(drink[0]).amount} Angebote</span>
-			<img src="{getCardInfo(drink[0]).imagePath}" alt={drink[1]}>
-			<a sveltekit:prefetch href={'/'+drink[0]}>{drink[1]}</a>
-		</div>
+		<li>
+			<a sveltekit:prefetch href={'/'+drink[0]}>
+				<span class="badge badge-right">{getCardInfo(drink[0]).amount} Angebote</span>
+				<img src="{getCardInfo(drink[0]).imagePath}" alt={drink[1]}>
+				<span class="card-text">{drink[1]}</span>
+			</a>
+		</li>
 	{/each}
-	</div>
+	</ul>
 </section>
 
 <section>
@@ -58,15 +60,15 @@
 	a{
 		margin-bottom: 0.5em;
 	}
-
-	.overview-container{
-		margin: 0;
+	ul{
+		margin: 0 0 1.5em 0;
 		padding: 0;
+		width:100%;
 		display:grid;
 		gap: 1rem;
-		grid-template-columns: repeat(auto-fit, minmax(min(16em, 47%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(9em, 47%), 1fr));
 	}
-	.overview-item{
+	li{
 		border-radius: 0.3em;
 		background-color: white;
 		padding: 0 1rem;
@@ -74,12 +76,12 @@
 		position: relative;
 		overflow: hidden;
 	}
-	.overview-item > img{
+	a > img{
 		max-height: 7rem;
 		display: block;
 		margin: 1em auto -1.5em auto;
 	}
-	.overview-item > a {
+	.card-text{
 		margin-top: 2em;
 		display: block;
 		margin-bottom: 0.5em;

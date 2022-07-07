@@ -1,5 +1,5 @@
 <script>
-  import { imgRoot } from './stores.js'
+  import { imgRoot } from '../stores.js'
   import { getRelativeDiscount } from '../utils'
   export let offer
 
@@ -45,6 +45,7 @@
 }
 .multi-img-container > img{
   overflow: hidden;
+  max-height: 7rem;
 }
 li > img{
   max-height: 7rem;
