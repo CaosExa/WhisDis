@@ -61,7 +61,7 @@
 		margin-bottom: 0.5em;
 	}
 	ul{
-		margin: 0 0 1.5em 0;
+		margin: 1rem 0 1.5em 0;
 		padding: 0;
 		width:100%;
 		display:grid;
