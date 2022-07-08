@@ -36,7 +36,9 @@
 
 <section>
   <h2>
-	  Weitere Angebote:
+		<strong>
+	  	Weitere Angebote
+		</strong>
 	</h2>
 		<a sveltekit:prefetch href="/vodka">Vodka</a>
 		<a sveltekit:prefetch href="/gin">Gin</a>
@@ -53,6 +55,7 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
+		height: calc(100vh - 2rem);
 	}
 	h1 {
 		width: 100%;
