@@ -55,7 +55,6 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
-		height: calc(100vh - 2rem);
 	}
 	h1 {
 		width: 100%;
@@ -64,7 +63,7 @@
 		margin-bottom: 0.5em;
 	}
 	ul{
-		margin: 1rem 0 1.5em 0;
+		margin: 1rem 0 2rem 0;
 		padding: 0;
 		width:100%;
 		display:grid;
