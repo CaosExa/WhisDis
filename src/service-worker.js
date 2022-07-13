@@ -7,7 +7,7 @@ self.addEventListener('fetch', (event) => {
 	if (
 		event.request.destination === 'image' ||
 		event.request.destination === 'font' ||
-		event.request.destination === 'style' ||
+		event.request.destination === 'style'
 	) {
 		event.respondWith(
 			caches.open(cacheName).then((cache) => {
