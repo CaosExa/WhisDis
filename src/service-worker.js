@@ -2,13 +2,13 @@ const cacheName = 'WhisDisCache';
 
 self.addEventListener('fetch', (event) => {
 	// Check if this is a request for an image
+	//event.request.destination === 'script' ||
+	//event.request.destination === 'manifest'
 	if (
 		event.request.destination === 'image' ||
 		event.request.destination === 'font' ||
 		event.request.destination === 'style' ||
-		event.request.destination === 'script' ||
 		event.request.destination === 'document' ||
-		event.request.destination === 'manifest'
 	) {
 		event.respondWith(
 			caches.open(cacheName).then((cache) => {
