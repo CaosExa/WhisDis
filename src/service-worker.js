@@ -8,7 +8,6 @@ self.addEventListener('fetch', (event) => {
 		event.request.destination === 'image' ||
 		event.request.destination === 'font' ||
 		event.request.destination === 'style' ||
-		event.request.destination === 'document'
 	) {
 		event.respondWith(
 			caches.open(cacheName).then((cache) => {
