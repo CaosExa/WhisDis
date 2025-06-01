@@ -40,12 +40,12 @@
 	  	Weitere Angebote
 		</strong>
 	</h2>
-		<a sveltekit:prefetch href="/vodka">Vodka</a>
-		<a sveltekit:prefetch href="/gin">Gin</a>
+		<a href="/vodka">Vodka</a>
+		<a href="/gin">Gin</a>
 		<a href="/wijn">Wein</a>
-		<a sveltekit:prefetch href="/cognac">Cognac</a>
-		<a sveltekit:prefetch href="/likeuren">Likör</a>
-		<a sveltekit:prefetch href="/jenever-vieux">Jenever & Brandy</a>
+		<a href="/cognac">Cognac</a>
+		<a href="/likeuren">Likör</a>
+		<a href="/jenever-vieux">Jenever & Brandy</a>
 </section>
 
 <style>
