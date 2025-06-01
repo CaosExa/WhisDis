@@ -24,7 +24,7 @@
 	<ul>
 	{#each $headerDrinks as drink}
 		<li>
-			<a sveltekit:prefetch href={'/'+drink[0]}>
+			<a href={'/'+drink[0]}>
 				<span class="badge badge-right">{getCardInfo(drink[0]).amount} Angebote</span>
 				<img src="{getCardInfo(drink[0]).imagePath}" alt={drink[1]}>
 				<span class="card-text">{drink[1]}</span>
@@ -42,7 +42,7 @@
 	</h2>
 		<a sveltekit:prefetch href="/vodka">Vodka</a>
 		<a sveltekit:prefetch href="/gin">Gin</a>
-		<a sveltekit:prefetch href="/wijn">Wein</a>
+		<a href="/wijn">Wein</a>
 		<a sveltekit:prefetch href="/cognac">Cognac</a>
 		<a sveltekit:prefetch href="/likeuren">Likör</a>
 		<a sveltekit:prefetch href="/jenever-vieux">Jenever & Brandy</a>
